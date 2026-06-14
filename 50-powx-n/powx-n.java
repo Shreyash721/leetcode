@@ -11,15 +11,13 @@ class Solution {
     }
 
     public double powerByRecusion(double p, long q) {
-    if (q == 0) return 1;
+        if(q==0) return 1;
 
-    double half = powerByRecusion(p, q / 2);
+        double half=powerByRecusion(p,q/2);
 
-    if (q % 2 == 0) {
-        return half * half;
-    }
+        if(q%2==0) return half*half;
 
-    return half * half * p;
+        return half*half*p;
     }
 }
         /*double pro = 1;
