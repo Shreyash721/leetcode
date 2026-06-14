@@ -1,6 +1,28 @@
 class Solution {
     public double myPow(double x, int n) {
-        double pro = 1;
+        long N = n;
+
+        if (N < 0) {
+            N = Math.abs(N);
+            x = 1 / x;
+        }
+
+        return powerByRecusion(x, N);
+    }
+
+    public double powerByRecusion(double p, long q) {
+    if (q == 0) return 1;
+
+    double half = powerByRecusion(p, q / 2);
+
+    if (q % 2 == 0) {
+        return half * half;
+    }
+
+    return half * half * p;
+    }
+}
+        /*double pro = 1;
         long N = n;
 
         if (N < 0) {
@@ -18,4 +40,7 @@ class Solution {
 
         return pro;
     }
-}
+}*/
+    
+
+    
